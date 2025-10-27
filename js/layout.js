@@ -30,7 +30,7 @@ function setActiveNavLink() {
 
 // 載入 Header 與 Footer
 loadComponent('header', '/website/components/header.html');
-loadComponent('footer', '/website//components/footer.html');
+loadComponent('footer', '/website/components/footer.html');
 
 
 // 載入 動畫效果
