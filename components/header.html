@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Header</title>
+  <script src="/js/lang.js" defer></script>
+  <!-- 引用本地 Bootstrap JS -->
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 引用自訂樣式 -->
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm position-relative">
+      <div class="container">
+        <!-- LOGO -->
+        <a class="navbar-brand" href="./index.html">
+          <img class="img-fluid" style="max-width:12rem;" src="./img/LOGO.png" alt="">
+        </a>
+
+        <!-- 漢堡按鈕 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+          aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Offcanvas (手機版選單) -->
+        <div class="offcanvas offcanvas-end text-bg-white" tabindex="-1" id="offcanvasDarkNavbar"
+          aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <img class="w-50" src="./img/LOGO.png" alt="">
+            <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav fs-7 fw-bold justify-content-end flex-grow-1 pe-5">
+              <li class="nav-item">
+                <a class="nav-link text-primary active" href="index.html" data-lang="nav_home">關於研達</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="products.html" data-lang="nav_products">精選產品</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="news.html" data-lang="nav_news">最新消息</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="contact.html" data-lang="nav_contact">聯絡我們</a>
+              </li>
+              <!-- 手機版語言切換 -->
+              <!-- 語言下拉選單 -->
+              <li class="nav-item dropdown d-lg-none">
+                <a class="nav-link dropdown-toggle fs-7" href="#" id="languageDropdown" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false" data-lang="nav_language">
+                  繁體中文
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                  <li><a class="dropdown-item fs-7" href="#" onclick="setLang('zh')">繁體中文</a></li>
+                  <li><a class="dropdown-item fs-7" href="#" onclick="setLang('en')">English</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 桌機版語言切換 -->
+        <div class="d-none d-lg-flex">
+          <div class="nav-item dropdown d-flex align-items-center">
+            <img src="./img/global.png" alt="" class="me-1" style="width: 20px; height: 20px;">
+            <a class="nav-link dropdown-toggle fs-7" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" data-lang="nav_language">
+              繁體中文
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item fs-7" href="#" onclick="setLang('zh')">繁體中文</a></li>
+              <li><a class="dropdown-item fs-7" href="#" onclick="setLang('en')">English</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+</body>
+
+</html>

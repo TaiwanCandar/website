@@ -1,0 +1,7 @@
+// 自訂變數：改主色、按鈕圓角
+$primary: #C81528;         // 主色改紅
+$border-radius: 0.5rem;      // 全域圓角改 1rem
+$secondary: #E95D00;     // 次色改橘
+
+// 只引入 Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
