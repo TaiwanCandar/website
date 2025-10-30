@@ -149,6 +149,7 @@ footer {
 
 .bg-gray {
     background-color: #E4E4E4;
+    min-height: calc(100vh - 200px);
 }
 
 .iconimg {
