@@ -1,5 +1,5 @@
 section {
-  min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 200px);
 }
 
 .container {
@@ -236,10 +236,22 @@ footer {
         border-radius: 1rem;
     }
 
-    p {
+    .dot-list {
+        padding-left: 1.2em;
+        /* 整體縮進 */
+        li {
         text-align: start;
-        line-height: 1;
+        line-height: 1.6rem;
     }
+    }
+
+    .dot-list p::before {
+        content: '‧';
+        /* 加上你想要的點點符號 */
+        margin-right: 0.5em;
+    }
+
+
 
     .tabs {
         margin-top: 1rem;
@@ -503,10 +515,10 @@ footer {
 @media (max-width: 768px) {
 
     /* md 以下 */
-.banner{
-    background-attachment: scroll;
-    /* 👈 讓手機不錯亂 */
-}
+    .banner {
+        background-attachment: scroll;
+        /* 👈 讓手機不錯亂 */
+    }
 
     h1 {
         font-size: 2rem !important;
