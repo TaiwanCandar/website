@@ -75,8 +75,11 @@ footer {
 .banner {
     width: 100%;
     height: 24rem;
-    background: url(../img/banner.jpg) fixed center;
+    background-image: url(../img/banner.jpg);
+    background-position: center center;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
     overflow: hidden;
 
@@ -482,7 +485,7 @@ footer {
         letter-spacing: 0.08rem;
     }
 
-    img{
+    img {
         width: auto;
         height: auto;
         cursor: pointer;
@@ -495,6 +498,10 @@ footer {
 @media (max-width: 768px) {
 
     /* md 以下 */
+    .banner {
+        height: 16rem;
+
+    }
     h1 {
         font-size: 2rem !important;
     }
@@ -507,7 +514,7 @@ footer {
             margin: 0.3rem;
         }
 
-       
+
 
 
     }
@@ -519,10 +526,10 @@ footer {
     }
 
     .contact-info {
-        h5{
+        h5 {
             font-size: 0.9rem;
         }
-        }
+    }
 
 }
 
