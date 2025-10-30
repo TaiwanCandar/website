@@ -79,7 +79,8 @@ footer {
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
+    /* 👈 讓手機不錯亂 */
     position: relative;
     overflow: hidden;
 
@@ -498,10 +499,8 @@ footer {
 @media (max-width: 768px) {
 
     /* md 以下 */
-    .banner {
-        height: 10rem;
 
-    }
+
     h1 {
         font-size: 2rem !important;
     }
