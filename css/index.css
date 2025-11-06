@@ -514,6 +514,13 @@ footer {
 
 @media (max-width: 768px) {
 
+    .container {
+    width: 100%;
+    /* 保持響應式縮放 */
+    margin: 0 auto;
+    /* 水平置中 */
+}
+
     /* md 以下 */
     .banner {
         background-attachment: scroll;
