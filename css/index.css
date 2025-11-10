@@ -541,7 +541,7 @@ footer {
         /* 水平置中 */
         flex-wrap: wrap;
         /* 內容太寬可自動換行 */
-        width: 100%;
+        width: 80%;
         height: 2.5rem;
         text-align: center;
 
