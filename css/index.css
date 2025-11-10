@@ -100,7 +100,13 @@ footer {
 }
 
 .nvidia {
-    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+    height: auto;
 
     h2 {
         font-size: 1.8rem;
@@ -115,8 +121,9 @@ footer {
     }
 
     img {
+        height: 3rem;
+        /* 🔥 固定圖片高度 */
         width: auto;
-        height: auto;
     }
 }
 
@@ -533,17 +540,10 @@ footer {
     }
 
     .nvidia {
-        display: flex;
-        /* 👈 恢復 flex 排版 */
-        align-items: center;
-        /* 垂直置中 */
-        justify-content: center;
-        /* 水平置中 */
-        flex-wrap: wrap;
-        /* 內容太寬可自動換行 */
-        width: 80%;
-        height: 2.5rem;
-        text-align: center;
+        img {
+            height: 2.4rem;
+            /* 🔥 手機再縮小一點 */
+        }
 
         h2 {
             font-size: 1.2rem;
