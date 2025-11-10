@@ -533,9 +533,17 @@ footer {
     }
 
     .nvidia {
-        height: 2.5rem;
-        width: 100%;
+        display: flex;
+        /* 👈 恢復 flex 排版 */
+        align-items: center;
+        /* 垂直置中 */
         justify-content: center;
+        /* 水平置中 */
+        flex-wrap: wrap;
+        /* 內容太寬可自動換行 */
+        width: 100%;
+        height: 2.5rem;
+        text-align: center;
 
         h2 {
             font-size: 1.2rem;
