@@ -238,11 +238,12 @@ footer {
 
     .dot-list {
         padding-left: 1.2em;
+
         /* 整體縮進 */
         li {
-        text-align: start;
-        line-height: 1.6rem;
-    }
+            text-align: start;
+            line-height: 1.6rem;
+        }
     }
 
     .dot-list p::before {
@@ -515,11 +516,11 @@ footer {
 @media (max-width: 768px) {
 
     .container {
-    width: 100%;
-    /* 保持響應式縮放 */
-    margin: 0 auto;
-    /* 水平置中 */
-}
+        width: 100%;
+        /* 保持響應式縮放 */
+        margin: 0 auto;
+        /* 水平置中 */
+    }
 
     /* md 以下 */
     .banner {
@@ -533,6 +534,8 @@ footer {
 
     .nvidia {
         height: 2.5rem;
+        width: 100%;
+        justify-content: center;
 
         h2 {
             font-size: 1.2rem;
