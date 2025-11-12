@@ -2,6 +2,18 @@ section {
     min-height: calc(100vh - 200px);
 }
 
+.h3{
+    font-size: 1.75rem;
+}
+
+.h4 {
+    font-size: 1.5rem;
+}
+
+.h5 {
+    font-size: 1.25rem;
+}
+
 .container {
     max-width: 1080px;
     /* 想要的固定寬度 */
@@ -521,6 +533,9 @@ footer {
 
 
 @media (max-width: 768px) {
+    .h4 {
+        font-size: 1rem;
+    }
 
     .container {
         width: 100%;
