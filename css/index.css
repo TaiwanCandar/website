@@ -537,6 +537,10 @@ footer {
         /* 水平置中 */
     }
 
+    .footer_nbsp {
+        display: none;
+    }
+
     /* md 以下 */
     .banner {
         background-attachment: scroll;
