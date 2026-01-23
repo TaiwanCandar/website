@@ -128,3 +128,46 @@ document.addEventListener('click', (e) => {
     hideImage();
   }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const navLinks = document.querySelectorAll(".category-nav .nav-link");
+    const sections = document.querySelectorAll("section > .picbg .container .col > div[id]");
+    const nav = document.querySelector(".category-nav");
+
+    function setActive() {
+        const navHeight = nav.offsetHeight;
+        let scrollPos = window.scrollY + navHeight + 20; // 20px 額外空隙
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const bottom = top + section.offsetHeight;
+            const id = section.getAttribute("id");
+            if(scrollPos >= top && scrollPos < bottom) {
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if(link.getAttribute("href") === "#" + id){
+                        link.classList.add("active");
+                    }
+                });
+            }
+        });
+    }
+
+    // 滾動監聽
+    window.addEventListener("scroll", setActive);
+    setActive();
+
+    // 點 nav 自動滾動
+    navLinks.forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+            const navHeight = nav.offsetHeight;
+            const offsetTop = targetSection.offsetTop - navHeight - 20; // 20px 額外空隙
+            window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth"
+            });
+        });
+    });
+});
