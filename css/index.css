@@ -421,6 +421,10 @@ footer {
     color: #C81528 !important;       /* 高亮字色 */
 }
 
+.category-nav .nav-link:hover {
+    color:  #C81528;
+}
+
 
 
 /* --- 圖片外框，統一比例與遮罩 --- */
