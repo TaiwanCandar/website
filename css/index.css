@@ -422,10 +422,12 @@ footer {
 }
 
 .category-nav .nav-link.active {
+    color: #C81528;
     border-bottom: #C81528 4px solid;
 }
 
 .category-nav .nav-link:hover {
+    color: #C81528;
     border-bottom: #C81528 4px solid;
 }
 
