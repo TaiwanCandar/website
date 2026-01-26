@@ -2,7 +2,7 @@ section {
     min-height: calc(100vh - 200px);
 }
 
-.h3{
+.h3 {
     font-size: 1.75rem;
 }
 
@@ -216,7 +216,7 @@ footer {
 /* 精選產品 */
 
 .bg-category {
-    background:rgba(244, 244, 244, 0.9);
+    background: rgba(244, 244, 244, 0.9);
     backdrop-filter: blur(8px);
 }
 
@@ -417,13 +417,15 @@ footer {
     }
 }
 
+.category-nav .nav-link {
+    border-bottom: rgba(244, 244, 244, 0.9) 4px solid;
+}
+
 .category-nav .nav-link.active {
-    color: #C81528 !important;       /* 高亮字色 */
     border-bottom: #C81528 4px solid;
 }
 
 .category-nav .nav-link:hover {
-    color:  #C81528;
     border-bottom: #C81528 4px solid;
 }
 
@@ -595,11 +597,6 @@ footer {
 
 @media (min-width: 992px) {
 
-
-
-
     /* lg 以上 */
-
-
 
 }
