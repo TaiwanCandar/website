@@ -347,99 +347,88 @@
     });
   </script>
 
-  <script>
-    // 慣性滾動效果
-    document.addEventListener('DOMContentLoaded', () => {
-      const slider = document.querySelector('.product-scroll');
-      if (!slider) return;
+<script>
+  // 增加慣性滾動效果
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.product-scroll');
+  if (!slider) return;
 
-      let isDown = false;
-      let startX = 0;
-      let scrollStart = 0;
+  let isDown = false;
+  let startX = 0;
+  let scrollStart = 0;
+  let velocity = 0;
+  let rafId = null;
 
-      let velocity = 0;
-      let rafId = null;
+  function stopMomentum() {
+    if (rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
 
-      function stopMomentum() {
-        if (rafId) {
-          cancelAnimationFrame(rafId);
-          rafId = null;
-        }
-      }
+  function momentumScroll() {
+    slider.scrollLeft += velocity;
+    velocity *= 0.92;
 
-      function momentumScroll() {
-        slider.scrollLeft += velocity;
-        velocity *= 0.92; // 阻尼，數字越小空氣越濃
+    if (Math.abs(velocity) > 0.5) {
+      rafId = requestAnimationFrame(momentumScroll);
+    }
+  }
 
-        if (Math.abs(velocity) > 0.5) {
-          rafId = requestAnimationFrame(momentumScroll);
-        }
-      }
+  /* ===== 滑鼠（桌機） ===== */
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    stopMomentum();
 
-      slider.addEventListener('mousedown', (e) => {
-        isDown = true;
-        slider.classList.add('active');
+    startX = e.pageX;
+    scrollStart = slider.scrollLeft;
+    velocity = 0;
+  });
 
-        stopMomentum();
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
 
-        startX = e.pageX;
-        scrollStart = slider.scrollLeft;
-        velocity = 0;
-      });
+    const walk = e.pageX - startX;
+    slider.scrollLeft = scrollStart - walk;
+    velocity = -walk * 0.15;
+  });
 
-      slider.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+    momentumScroll();
+  });
 
-        e.preventDefault();
+  slider.addEventListener('mouseleave', () => {
+    if (!isDown) return;
+    isDown = false;
+    momentumScroll();
+  });
 
-        const x = e.pageX;
-        const walk = x - startX;
+  /* ===== 觸控（手機） ===== */
+  slider.addEventListener('touchstart', (e) => {
+    isDown = true;
+    stopMomentum();
 
-        slider.scrollLeft = scrollStart - walk;
-        velocity = -walk * 0.15; // 速度感來源
-      });
+    startX = e.touches[0].pageX;
+    scrollStart = slider.scrollLeft;
+    velocity = 0;
+  }, { passive: true });
 
-      slider.addEventListener('mouseup', () => {
-        isDown = false;
-        slider.classList.remove('active');
-        momentumScroll();
-      });
+  slider.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
 
-      slider.addEventListener('mouseleave', () => {
-        if (!isDown) return;
-        isDown = false;
-        slider.classList.remove('active');
-        momentumScroll();
-      });
-    });
+    const walk = e.touches[0].pageX - startX;
+    slider.scrollLeft = scrollStart - walk;
+    velocity = -walk * 0.25; // 手機手感加強
+  }, { passive: true });
 
-    let touchStartX = 0;
-
-    slider.addEventListener('touchstart', function (e) {
-      isDown = true;
-      stopMomentum();
-
-      touchStartX = e.touches[0].pageX;
-      startX = touchStartX;
-      scrollStart = slider.scrollLeft;
-      velocity = 0;
-    }, { passive: true });
-
-    slider.addEventListener('touchmove', function (e) {
-      if (!isDown) return;
-
-      const x = e.touches[0].pageX;
-      const walk = x - startX;
-
-      slider.scrollLeft = scrollStart - walk;
-      velocity = -walk * 0.25; // 手機手感通常要大一點
-    }, { passive: true });
-
-    slider.addEventListener('touchend', function () {
-      isDown = false;
-      momentumScroll();
-    });
-  </script>
+  slider.addEventListener('touchend', () => {
+    isDown = false;
+    momentumScroll();
+  });
+});
+</script>
 
 </body>
 
