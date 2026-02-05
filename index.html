@@ -412,6 +412,33 @@
         momentumScroll();
       });
     });
+
+    let touchStartX = 0;
+
+    slider.addEventListener('touchstart', function (e) {
+      isDown = true;
+      stopMomentum();
+
+      touchStartX = e.touches[0].pageX;
+      startX = touchStartX;
+      scrollStart = slider.scrollLeft;
+      velocity = 0;
+    }, { passive: true });
+
+    slider.addEventListener('touchmove', function (e) {
+      if (!isDown) return;
+
+      const x = e.touches[0].pageX;
+      const walk = x - startX;
+
+      slider.scrollLeft = scrollStart - walk;
+      velocity = -walk * 0.25; // 手機手感通常要大一點
+    }, { passive: true });
+
+    slider.addEventListener('touchend', function () {
+      isDown = false;
+      momentumScroll();
+    });
   </script>
 
 </body>
