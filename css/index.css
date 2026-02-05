@@ -130,7 +130,7 @@ footer {
 
     img {
         height: 3rem;
-        /* 🔥 固定圖片高度 */
+        /*  固定圖片高度 */
         width: auto;
     }
 }
@@ -181,12 +181,13 @@ footer {
     display: flex;
     flex-wrap: nowrap;
     gap: 24px;
-    overflow-x: hidden;
+    overflow-x: auto;
     overflow-y: hidden;
     cursor: grab;
     /* 滑鼠變成抓手 */
     user-select: none;
     /* 拖動時不選文字 */
+    -webkit-overflow-scrolling: touch;
 }
 
 .product-scroll:active {
@@ -208,10 +209,12 @@ footer {
 .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: color 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     border: #dd4251 1px solid;
+    transform: translateY(-5px);
 }
 
 .card-link {
