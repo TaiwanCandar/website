@@ -654,6 +654,28 @@ footer {
     }
 }
 
+@media (min-width: 992px) {
+  /* 初始狀態：隱藏、向下偏移、準備動畫 */
+  .dropdown-hover > .dropdown-menu {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .2s ease, transform .2s ease;
+    display: block;          /* 必須 block 才能 transition */
+    visibility: hidden;
+  }
+
+  /* hover 展開 */
+  .dropdown-hover:hover > .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  /* 小箭頭不影響 hover */
+  .dropdown-hover > .dropdown-toggle::after {
+    pointer-events: none;
+  }
+}
 
 
 
