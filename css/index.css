@@ -320,6 +320,14 @@ footer {
     border-radius: 0.5rem 0.5rem 0 0;
 }
 
+.card-11 {
+    height: 20rem;
+    background-image: url(../img/home_img11.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
 
 
 /* 精選產品 */
