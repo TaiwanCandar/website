@@ -1,4 +1,5 @@
 // layout.js
+
 async function loadComponent(id, file) {
   const el = document.getElementById(id);
   if (el) {
@@ -172,5 +173,134 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// 卡片拖曳滾動
+    // 電腦版拖曳滾動
+    const slider = document.querySelector('.products-scroll');
 
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('active'); // 可用於 cursor: grabbing
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return; // 沒按下不執行
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1; // 1 = 滑動速度倍數，可調
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    // 行動版拖曳滾動
+    slider.addEventListener('touchstart', (e) => {
+      isDown = true;
+      startX = e.touches[0].pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('touchend', () => {
+      isDown = false;
+    });
+
+    slider.addEventListener('touchmove', (e) => {
+      if (!isDown) return;
+      const x = e.touches[0].pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    // 增加慣性滾動效果
+    document.addEventListener('DOMContentLoaded', () => {
+      const slider = document.querySelector('.products-scroll');
+      if (!slider) return;
+
+      let isDown = false;
+      let startX = 0;
+      let scrollStart = 0;
+      let velocity = 0;
+      let rafId = null;
+
+      function stopMomentum() {
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+      }
+
+      function momentumScroll() {
+        slider.scrollLeft += velocity;
+        velocity *= 0.92;
+
+        if (Math.abs(velocity) > 0.5) {
+          rafId = requestAnimationFrame(momentumScroll);
+        }
+      }
+
+      /* ===== 滑鼠（桌機） ===== */
+      slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        stopMomentum();
+
+        startX = e.pageX;
+        scrollStart = slider.scrollLeft;
+        velocity = 0;
+      });
+
+      slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+
+        const walk = e.pageX - startX;
+        slider.scrollLeft = scrollStart - walk;
+        velocity = -walk * 0.15;
+      });
+
+      slider.addEventListener('mouseup', () => {
+        isDown = false;
+        momentumScroll();
+      });
+
+      slider.addEventListener('mouseleave', () => {
+        if (!isDown) return;
+        isDown = false;
+        momentumScroll();
+      });
+
+      /* ===== 觸控（手機） ===== */
+      slider.addEventListener('touchstart', (e) => {
+        isDown = true;
+        stopMomentum();
+
+        startX = e.touches[0].pageX;
+        scrollStart = slider.scrollLeft;
+        velocity = 0;
+      }, { passive: true });
+
+      slider.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+
+        const walk = e.touches[0].pageX - startX;
+        slider.scrollLeft = scrollStart - walk;
+        velocity = -walk * 0.25; // 手機手感加強
+      }, { passive: true });
+
+      slider.addEventListener('touchend', () => {
+        isDown = false;
+        momentumScroll();
+      });
+      });

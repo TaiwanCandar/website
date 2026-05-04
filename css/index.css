@@ -1,3 +1,7 @@
+body {
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
+
 section {
     min-height: calc(100vh - 200px);
 }
@@ -18,6 +22,8 @@ section {
     margin: 0 auto;
     /* 水平置中 */
 }
+
+
 
 footer {
     p {
@@ -167,6 +173,10 @@ footer {
     min-height: calc(100vh - 200px);
 }
 
+.bg-grey {
+    background-color: rgb(240, 240, 240);
+}
+
 .iconimg {
     width: 10rem;
     height: 10rem;
@@ -177,7 +187,7 @@ footer {
     }
 }
 
-.product-scroll {
+.products-scroll {
     display: flex;
     flex-wrap: nowrap;
     gap: 24px;
@@ -190,16 +200,16 @@ footer {
     -webkit-overflow-scrolling: touch;
 }
 
-.product-scroll:active {
+.products-scroll:active {
     cursor: grabbing;
 }
 
-.product-card {
+.products-card {
     flex: 0 0 20rem;
     /* 固定寬度，調整你想要的 */
 }
 
-.product-card :hover {
+.products-card :hover {
     .card-body {
         background-color: #dd4251;
     }
@@ -328,9 +338,123 @@ footer {
     border-radius: 0.5rem 0.5rem 0 0;
 }
 
+/* 精選產品 new */
+.dot-list {
+    padding-left: 0.2em;
+
+    /* 整體縮進 */
+    li {
+        text-align: start;
+        line-height: 1.6rem;
+    }
+}
+
+.dot-list p::before {
+    content: '‧';
+    /* 加上你想要的點點符號 */
+    margin-right: 0.5em;
+}
+
+.product-item {
+  flex: 0 0 300px;
+  border-radius: 0.3rem; /* 不要太圓 */
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #eee; /* 工業感：乾淨邊界 */
+}
+
+.product-item img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+
+  transition: transform 0.3s ease;
+}
+
+/* hover 只微動 */
+.product-item:hover img {
+  transform: scale(1.05); /* 很輕就好 */
+}
 
 
 /* 精選產品 */
+
+.products_banner {
+    width: 100%;
+    height: 12rem;
+    background-image: url(../img/products_banner.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+
+    h1 {
+        font-weight: 700;
+        text-shadow: 1rem rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+        text-shadow: 1rem rgba(0, 0, 0, 0.5);
+    }
+
+    .btn-primary-span {
+        border-radius: 2rem !important;
+        font-weight: 700;
+    }
+
+}
+
+button {
+    border-radius: 2rem !important;
+}
+
+.product-img {
+    width: 100%;
+    height: 20rem;
+    border-radius: 0.5rem;
+    border: #fff 4px solid;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-img:hover img {
+    transform: scale(1.1);
+}
+
+.product-why-img {
+    width: 100%;
+    height: 18rem;
+}
+
+.product-why-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.product-type-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.product-type-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .bg-category {
     background: rgba(244, 244, 244, 0.9);
@@ -663,26 +787,28 @@ footer {
 }
 
 @media (min-width: 992px) {
-  /* 初始狀態：隱藏、向下偏移、準備動畫 */
-  .dropdown-hover > .dropdown-menu {
-    opacity: 0;
-    transform: translateY(8px);
-    transition: opacity .2s ease, transform .2s ease;
-    display: block;          /* 必須 block 才能 transition */
-    visibility: hidden;
-  }
 
-  /* hover 展開 */
-  .dropdown-hover:hover > .dropdown-menu {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-  }
+    /* 初始狀態：隱藏、向下偏移、準備動畫 */
+    .dropdown-hover>.dropdown-menu {
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity .2s ease, transform .2s ease;
+        display: block;
+        /* 必須 block 才能 transition */
+        visibility: hidden;
+    }
 
-  /* 小箭頭不影響 hover */
-  .dropdown-hover > .dropdown-toggle::after {
-    pointer-events: none;
-  }
+    /* hover 展開 */
+    .dropdown-hover:hover>.dropdown-menu {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    /* 小箭頭不影響 hover */
+    .dropdown-hover>.dropdown-toggle::after {
+        pointer-events: none;
+    }
 }
 
 

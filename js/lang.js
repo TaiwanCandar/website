@@ -11,7 +11,7 @@ function applyLang(lang) {
   document.querySelectorAll("[data-lang]").forEach(el => {
     const key = el.getAttribute("data-lang");
     if (translations[lang] && translations[lang][key]) {
-      el.innerText = translations[lang][key];
+      el.innerHTML = translations[lang][key];
     }
   });
   document.documentElement.lang = lang;

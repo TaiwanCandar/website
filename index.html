@@ -128,10 +128,10 @@
               </h3>
             </div>
 
-            <div class="product-scroll py-3">
-              <div class="product-card">
+            <div class="products-scroll py-3">
+              <div class="products-card">
                 <div class="card shadow-sm">
-                  <a href="./products.html" class="card-link">
+                  <a href="./products_item3.html" class="card-link">
                     <div class="card-3"></div>
                     <div class="card-body">
                       <h5 class="card-title fw-bold" data-lang="home_products3">真空吸塵機</h5>
@@ -141,9 +141,9 @@
                 </div>
               </div>
 
-                            <div class="product-card">
+              <div class="products-card">
                 <div class="card shadow-sm">
-                  <a href="./products.html" class="card-link">
+                  <a href="./products_item4.html" class="card-link">
                     <div class="card-4"></div>
                     <div class="card-body">
                       <h5 class="card-title fw-bold" data-lang="home_products4">洗輪機</h5>
@@ -153,21 +153,21 @@
                 </div>
               </div>
 
-              <div class="product-card">
+              <div class="products-card">
                 <div class="card  shadow-sm">
-                  <a href="./products.html" class="card-link">
+                  <a href="./products_item5.html" class="card-link">
                     <div class="card-5"></div>
                     <div class="card-body">
                       <h5 class="card-title fw-bold" data-lang="home_products5">洗鞋機</h5>
-                      <p class="card-text" data-lang="home_products5_content">高效刷洗系統，讓每一步都保持潔净</p>
+                      <p class="card-text" data-lang="home_products5_content">高效刷洗系統，讓每一步都保持潔淨</p>
                     </div>
                   </a>
                 </div>
               </div>
 
-              <div class="product-card">
+              <div class="products-card">
                 <div class="card  shadow-sm">
-                  <a href="./products.html" class="card-link">
+                  <a href="./products_item6.html" class="card-link">
                     <div class="card-6"></div>
                     <div class="card-body">
                       <h5 class="card-title fw-bold" data-lang="home_products6">魔垫</h5>
@@ -177,9 +177,9 @@
                 </div>
               </div>
 
-              <div class="product-card">
+              <div class="products-card">
                 <div class="card  shadow-sm">
-                  <a href="./products.html" class="card-link">
+                  <a href="./products_item7.html" class="card-link">
                     <div class="card-7"></div>
                     <div class="card-body">
                       <h5 class="card-title fw-bold" data-lang="home_products7">神氟®潤滑油</h5>
@@ -188,10 +188,10 @@
                   </a>
                 </div>
               </div>
-              
-              <div class="product-card">
+
+              <div class="products-card">
                 <div class="card  shadow-sm">
-                  <a href="./products.html" class="card-link">
+                  <a href="./products_item1.html" class="card-link">
                     <div class="card-1"></div>
                     <div class="card-body">
                       <h5 class="card-title fw-bold" data-lang="home_products1">環形氣浮風車</h5>
@@ -201,9 +201,9 @@
                 </div>
               </div>
 
-              <div class="product-card">
+              <div class="products-card">
                 <div class="card  shadow-sm">
-                  <a href="./products.html" class="card-link">
+                  <a href="./products_item2.html" class="card-link">
                     <div class="card-2"></div>
                     <div class="card-body">
                       <h5 class="card-title fw-bold" data-lang="home_products2">無碳刷風車</h5>
@@ -213,9 +213,9 @@
                 </div>
               </div>
 
-              <div class="product-card">
+              <div class="products-card">
                 <div class="card  shadow-sm">
-                  <a href="./products.html" class="card-link">
+                  <a href="./products_item8.html" class="card-link">
                     <div class="card-8"></div>
                     <div class="card-body">
                       <h5 class="card-title fw-bold" data-lang="home_products8">氣旋式鼓風機TurboMAX</h5>
@@ -225,9 +225,9 @@
                 </div>
               </div>
 
-              <div class="product-card">
+              <div class="products-card">
                 <div class="card  shadow-sm">
-                  <a href="./products.html" class="card-link">
+                  <a href="./products_item9.html" class="card-link">
                     <div class="card-9"></div>
                     <div class="card-body">
                       <h5 class="card-title fw-bold" data-lang="home_products9">家用廚餘機</h5>
@@ -237,9 +237,9 @@
                 </div>
               </div>
 
-              <div class="product-card">
+              <div class="products-card">
                 <div class="card  shadow-sm">
-                  <a href="./products.html" class="card-link">
+                  <a href="./products_item11.html" class="card-link">
                     <div class="card-11"></div>
                     <div class="card-body">
                       <h5 class="card-title fw-bold" data-lang="home_products11">商用廚餘機</h5>
@@ -249,9 +249,9 @@
                 </div>
               </div>
 
-              <div class="product-card">
+              <div class="products-card">
                 <div class="card  shadow-sm">
-                  <a href="./products.html" class="card-link">
+                  <a href="./products_item10.html" class="card-link">
                     <div class="card-10"></div>
                     <div class="card-body">
                       <h5 class="card-title fw-bold" data-lang="home_products10">油水分離機</h5>
@@ -308,140 +308,6 @@
   </script>
 
 
-  <script>
-    // 電腦版拖曳滾動
-    const slider = document.querySelector('.product-scroll');
-
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      slider.classList.add('active'); // 可用於 cursor: grabbing
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-
-    slider.addEventListener('mousemove', (e) => {
-      if (!isDown) return; // 沒按下不執行
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 1; // 1 = 滑動速度倍數，可調
-      slider.scrollLeft = scrollLeft - walk;
-    });
-
-    // 行動版拖曳滾動
-    slider.addEventListener('touchstart', (e) => {
-      isDown = true;
-      startX = e.touches[0].pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('touchend', () => {
-      isDown = false;
-    });
-
-    slider.addEventListener('touchmove', (e) => {
-      if (!isDown) return;
-      const x = e.touches[0].pageX - slider.offsetLeft;
-      const walk = (x - startX) * 1;
-      slider.scrollLeft = scrollLeft - walk;
-    });
-  </script>
-
-<script>
-  // 增加慣性滾動效果
-document.addEventListener('DOMContentLoaded', () => {
-  const slider = document.querySelector('.product-scroll');
-  if (!slider) return;
-
-  let isDown = false;
-  let startX = 0;
-  let scrollStart = 0;
-  let velocity = 0;
-  let rafId = null;
-
-  function stopMomentum() {
-    if (rafId) {
-      cancelAnimationFrame(rafId);
-      rafId = null;
-    }
-  }
-
-  function momentumScroll() {
-    slider.scrollLeft += velocity;
-    velocity *= 0.92;
-
-    if (Math.abs(velocity) > 0.5) {
-      rafId = requestAnimationFrame(momentumScroll);
-    }
-  }
-
-  /* ===== 滑鼠（桌機） ===== */
-  slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    stopMomentum();
-
-    startX = e.pageX;
-    scrollStart = slider.scrollLeft;
-    velocity = 0;
-  });
-
-  slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-
-    const walk = e.pageX - startX;
-    slider.scrollLeft = scrollStart - walk;
-    velocity = -walk * 0.15;
-  });
-
-  slider.addEventListener('mouseup', () => {
-    isDown = false;
-    momentumScroll();
-  });
-
-  slider.addEventListener('mouseleave', () => {
-    if (!isDown) return;
-    isDown = false;
-    momentumScroll();
-  });
-
-  /* ===== 觸控（手機） ===== */
-  slider.addEventListener('touchstart', (e) => {
-    isDown = true;
-    stopMomentum();
-
-    startX = e.touches[0].pageX;
-    scrollStart = slider.scrollLeft;
-    velocity = 0;
-  }, { passive: true });
-
-  slider.addEventListener('touchmove', (e) => {
-    if (!isDown) return;
-
-    const walk = e.touches[0].pageX - startX;
-    slider.scrollLeft = scrollStart - walk;
-    velocity = -walk * 0.25; // 手機手感加強
-  }, { passive: true });
-
-  slider.addEventListener('touchend', () => {
-    isDown = false;
-    momentumScroll();
-  });
-});
-</script>
 
 </body>
 
