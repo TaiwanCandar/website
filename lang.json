@@ -304,7 +304,7 @@
     "product_item12_case6": "<b>電子業：</b>依摩泰",
 
     "product_item13_banner": "全氟聚醚 PFPE",
-    "product_item13_subtitle": "適用機櫃級與資料中心封閉式冷卻架構",
+    "product_item13_subtitle": "極致冷卻，專為資料中心而設",
     "product_item13": "全氟聚醚 PFPE",
     "product_item13_intro1": "(1) 廣泛的液體溫度範圍 94°C ~ 181°C",
     "product_item13_intro2": "(2) 不導電、毒性低、不可燃",
@@ -640,6 +640,7 @@
     "product_item7_case2": "<b>Substrate:</b> Unimicron, Nanya PCB",
     "product_item7_case3": "<b>Petrochemical:</b> Formosa Group, Chang Chun Group",
     "product_item7_case4": "Trusted by hundreds of clients",
+    
     "product_item1_banner": "CENAIR Blower",
     "product_item1_subtitle": "50% power, 100% performance",
     "product_item1": "CENAIR Blower",
@@ -663,6 +664,7 @@
     "product_item1_case1": "<b>Copper Foil:</b> Furukawa, Nanya",
     "product_item1_case2": "<b>CCL:</b> Nanya PCB",
     "product_item1_case3": "<b>Petrochemical:</b> Formosa Group",
+
     "product_item2_banner": "DOMEL Blower",
     "product_item2_subtitle": "Efficient brushless design, flexible airflow control",
     "product_item2": "DOMEL Blower",
@@ -700,6 +702,7 @@
     "product_item8_case1": "<b>Semiconductor:</b> TSMC",
     "product_item8_case2": "<b>Petrochemical:</b> Formosa Group, Chang Chun Group",
     "product_item8_case3": "4,000+ units installed across industries",
+
     "product_item9_banner": "Home Composter",
     "product_item9_subtitle": "24-hour microbial composting",
     "product_item9": "Home Composter",
@@ -713,6 +716,7 @@
     "product_item9_why3": "Produces reusable compost for plants.",
     "product_item9_why4": "Sealed design prevents odor and insects.",
     "product_item9_why5": "Simple operation with minimal steps.",
+
     "product_item11_banner": "Commercial Composter",
     "product_item11_subtitle": "24-hour microbial composting",
     "product_item11": "Commercial Composter",
@@ -776,7 +780,6 @@
     "product_item13_intro3": "(3) Zero evaporation",
     "product_item13_intro4": "(4) PUE below 1.1",
     "product_item13_intro5": "(5) Low viscosity and boiling point",
-
     "product_item13_why1": "SGS-tested for semiconductor cleanliness.",
     "product_item13_why2": "In-house cooling performance validation.",
     "product_item13_why3": "Custom development supported by R&D.",
