@@ -354,6 +354,14 @@ footer {
     border-radius: 0.5rem 0.5rem 0 0;
 }
 
+.card-14 {
+    height: 20rem;
+    background-image: url(../img/home_img14.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
 /* 精選產品 new */
 .dot-list {
     padding-left: 0.2em;
