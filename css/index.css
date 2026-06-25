@@ -702,7 +702,7 @@ button {
 .carousel-img-wrapper {
     position: relative;
     width: 85%;
-    height: 26rem;
+    height: 28rem;
     /* 統一高度，可自行調整 */
     margin: auto;
     overflow: hidden;
